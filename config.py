@@ -234,3 +234,25 @@ config.bind('M', 'hint links spawn mpv {hint-url}')
 config.set('colors.webpage.darkmode.enabled', False, '*://*.youtube.com/*')
 config.set('colors.webpage.darkmode.enabled', False, '*://*.youtube-nocookie.com/*')
 print("Webpage dark mode for YouTube: DISABLED (use YouTube's native dark theme)")
+
+c.url.searchengines = {
+    'DEFAULT': 'https://duckduckgo.com/?q={}',
+    '!aw':   'https://wiki.archlinux.org/?search={}',
+    '!apkg': 'https://archlinux.org/packages/?sort=&q={}',
+    '!gh':   'https://github.com/search?o=desc&q={}&s=stars',
+    '!yt':   'https://www.youtube.com/results?search_query={}',
+    '!r':    'https://www.reddit.com/search?q={}',
+    '!so':   'https://stackoverflow.com/search?q={}',
+    '!w':    'https://en.wikipedia.org/wiki/Special:Search?search={}',
+    '!aur':  'https://aur.archlinux.org/packages?K={}',
+    '!g':    'https://www.google.com/search?q={}'
+}
+
+# --- ZEN MODE SETTINGS (Initial State: Hidden) ---
+config.set('tabs.show', 'switching')
+config.set('statusbar.show', 'in-mode')
+config.set('scrolling.bar', 'never')
+
+# --- KEYBINDINGS ---
+# Press 'zb' to toggle both the Tab bar and Status bar at once
+config.bind('zb', 'config-cycle statusbar.show always in-mode ;; config-cycle tabs.show always switching')
