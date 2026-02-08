@@ -256,3 +256,8 @@ config.set('scrolling.bar', 'never')
 # --- KEYBINDINGS ---
 # Press 'zb' to toggle both the Tab bar and Status bar at once
 config.bind('zb', 'config-cycle statusbar.show always in-mode ;; config-cycle tabs.show always switching')
+
+# --- File handler ---
+config.set('fileselect.handler', 'external')
+config.set('fileselect.single_file.command', ['env', 'GTK_THEME=Adwaita:dark', 'zenity', '--file-selection'])
+config.set('fileselect.multiple_files.command', ['env', 'GTK_THEME=Adwaita:dark', 'zenity', '--file-selection', '--multiple'])
