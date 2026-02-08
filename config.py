@@ -280,3 +280,13 @@ config.bind('zb', 'config-cycle statusbar.show always in-mode ;; config-cycle ta
 config.set('fileselect.handler', 'external')
 config.set('fileselect.single_file.command', ['env', 'GTK_THEME=Adwaita:dark', 'zenity', '--file-selection'])
 config.set('fileselect.multiple_files.command', ['env', 'GTK_THEME=Adwaita:dark', 'zenity', '--file-selection', '--multiple'])
+
+# Toggle dark mode and reload the page automatically
+config.bind('td', 'config-cycle colors.webpage.darkmode.enabled true false ;; reload')
+
+# Custom function to toggle darkmode for the current domain
+for mode in ['true', 'false']:
+    config.bind(f't{mode[0]}', f'set -u {{url}} colors.webpage.darkmode.enabled {mode}')
+
+# Toggle dark mode for ONLY the current website and reload
+config.bind('tg', 'config-cycle -u {url} colors.webpage.darkmode.enabled true false ;; reload')
