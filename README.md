@@ -44,6 +44,9 @@ qutebrowser
 * **Hinting:** Press `f` to show links and follow them using the keyboard.
 * **Quickmarks:** Press `b` to open a bookmark or `M [key]` to set a quickmark.
 * **Search:** Use `/` to search within a page.
+* **Top and Bottom On,Off :** Use `zb` to hide and unhide.
+* **Turn dark mode or light:** Use `td` to turn on or off the dark and light mode.
+* **Turn On or Offper one website** Use `tg` to turn on or off for specific one website that you are in.
 
 ## 🛠 Customization
 
