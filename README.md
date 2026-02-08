@@ -54,12 +54,12 @@ If you want to tweak settings, you can edit `config.py` directly. For UI-based c
 ### Tips for a fresh install:
 
 Make sure you have the dependencies installed for your Linux distribution (e.g., `python-adblock` for adblocking features).
-
+Also you need to install zenity 
 ```bash
 # Arch Linux
-sudo pacman -S qutebrowser python-adblock
+sudo pacman -S qutebrowser python-adblock zenity
 
 # Debian/Ubuntu
-sudo apt install qutebrowser
+sudo apt install qutebrowser zenity
 
 ```
