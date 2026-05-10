@@ -4,7 +4,10 @@ echo "jseval -q (function(){ \
   if (!sel.rangeCount) return; \
   var range = sel.getRangeAt(0); \
   var mark = document.createElement('mark'); \
+  mark.className = 'qute-hl'; \
   mark.style.backgroundColor = '#f7ca88'; \
   mark.style.color = '#181818'; \
-  try { range.surroundContents(mark); } catch(e) {} \
+  mark.style.borderRadius = '2px'; \
+  try { range.surroundContents(mark); } catch(e) { return; } \
+  window._qhIdx = document.querySelectorAll('.qute-hl').length - 1; \
 })();" >> "$QUTE_FIFO"
