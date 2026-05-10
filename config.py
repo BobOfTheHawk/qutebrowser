@@ -291,5 +291,6 @@ for mode in ['true', 'false']:
 # Toggle dark mode for ONLY the current website and reload
 config.bind('tg', 'config-cycle -u {url} colors.webpage.darkmode.enabled true false ;; reload')
 
-# Highlight when reading shit
 config.bind(',h', 'spawn --userscript highlight')
+config.bind(',n', 'spawn --userscript highlight-next')
+config.bind(',p', 'spawn --userscript highlight-prev')
