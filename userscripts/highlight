@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "jseval -q (function(){ \
+  var sel = window.getSelection(); \
+  if (!sel.rangeCount) return; \
+  var range = sel.getRangeAt(0); \
+  var mark = document.createElement('mark'); \
+  mark.style.backgroundColor = '#f7ca88'; \
+  mark.style.color = '#181818'; \
+  try { range.surroundContents(mark); } catch(e) {} \
+})();" >> "$QUTE_FIFO"
