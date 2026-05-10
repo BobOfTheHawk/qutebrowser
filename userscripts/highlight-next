@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "jseval -q (function(){ \
+  var marks = document.querySelectorAll('.qute-hl'); \
+  if (!marks.length) return; \
+  window._qhIdx = ((window._qhIdx || 0) + 1) % marks.length; \
+  marks[window._qhIdx].scrollIntoView({behavior:'smooth', block:'center'}); \
+  marks.forEach(function(m){ m.style.outline='none'; }); \
+  marks[window._qhIdx].style.outline = '2px solid #dc9656'; \
+})();" >> "$QUTE_FIFO"
