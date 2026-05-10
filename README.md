@@ -10,6 +10,7 @@ This repository contains my personal dotfiles for **qutebrowser**, a keyboard-fo
 * `bookmarks/`: Directory containing saved bookmarks.
 * `quickmarks`: List of short-name URL aliases for fast navigation.
 * `qsettings/`: Internal browser state and window settings.
+* `userscripts/`: Custom userscripts (e.g., `highlight` for text highlighting).
 
 ## 🚀 Installation
 
@@ -47,6 +48,7 @@ qutebrowser
 * **Top and Bottom On,Off :** Use `zb` to hide and unhide.
 * **Turn dark mode or light:** Use `td` to turn on or off the dark and light mode.
 * **Turn On or Offper one website** Use `tg` to turn on or off for specific one website that you are in.
+* **Highlight text:** Select text, then press `,h` to highlight it in amber.
 
 ## 🛠 Customization
 
