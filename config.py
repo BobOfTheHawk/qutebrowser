@@ -17,7 +17,10 @@
 #                         HANDCRAFTED BY BOBOFTHEHAWK                                   #
 #                                                                                       #
 #########################################################################################
-config.load_autoconfig(False)
+# True = also load autoconfig.yml (settings changed live via :set/:bind).
+# config.py below is loaded after autoconfig.yml and always wins on conflict,
+# so nothing here gets silently overridden by a stray :set.
+config.load_autoconfig(True)
 
 config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 
@@ -39,9 +42,12 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
-config.set('content.local_content_can_access_remote_urls', True, 'file:///home/bob/.local/share/qutebrowser/userscripts/*')
+import os
+_home = os.path.expanduser('~')
 
-config.set('content.local_content_can_access_file_urls', False, 'file:///home/bob/.local/share/qutebrowser/userscripts/*')
+config.set('content.local_content_can_access_remote_urls', True, f'file://{_home}/.local/share/qutebrowser/userscripts/*')
+
+config.set('content.local_content_can_access_file_urls', False, f'file://{_home}/.local/share/qutebrowser/userscripts/*')
 
 base00 = "#181818"
 base01 = "#282828"
@@ -280,6 +286,7 @@ config.bind('zb', 'config-cycle statusbar.show always in-mode ;; config-cycle ta
 config.set('fileselect.handler', 'external')
 config.set('fileselect.single_file.command', ['env', 'GTK_THEME=Adwaita:dark', 'zenity', '--file-selection'])
 config.set('fileselect.multiple_files.command', ['env', 'GTK_THEME=Adwaita:dark', 'zenity', '--file-selection', '--multiple'])
+config.set('fileselect.folder.command', ['env', 'GTK_THEME=Adwaita:dark', 'zenity', '--file-selection', '--directory'])
 
 # Toggle dark mode and reload the page automatically
 config.bind('td', 'config-cycle colors.webpage.darkmode.enabled true false ;; reload')
